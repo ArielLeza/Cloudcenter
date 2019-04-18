@@ -9,6 +9,29 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "VLAN-ID",
+          "scope": "input",
+          "name": "VLAN-ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016GUJ7XRBGOK6XV5wkRH69Jxva5V2KfK6V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Enter first Leaf in VPC domain (ID number)",
+          "scope": "input",
+          "name": "Leaf-ID-1",
+          "type": "datatype.string",
+          "description": "used to define the Leaf-ID for VPC config"
+        },
+        "unique_name": "variable_workflow_016GTPLFML1D41FxyZ5u9x8H6CY3MciRLzM",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "enter the Interface Policy Group Name ",
           "scope": "input",
           "name": "Interface Policy Group Name",
@@ -38,34 +61,12 @@
         },
         "unique_name": "variable_workflow_016GTZ8RP9JKN08D0fbkWCLtmmGo54dFYls",
         "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "VLAN-ID",
-          "scope": "input",
-          "name": "VLAN-ID",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_016GUJ7XRBGOK6XV5wkRH69Jxva5V2KfK6V",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "Enter first Leaf in VPC domain (ID number)",
-          "scope": "input",
-          "name": "Leaf-ID-1",
-          "type": "datatype.string",
-          "description": "used to define the Leaf-ID for VPC config"
-        },
-        "unique_name": "variable_workflow_016GTPLFML1D41FxyZ5u9x8H6CY3MciRLzM",
-        "object_type": "variable_workflow"
       }
     ],
     "properties": {
       "atomic": {
-        "is_atomic": false
+        "atomic_group": "Ariel Atomic Activities",
+        "is_atomic": true
       },
       "delete_workflow_instance": false,
       "display_name": "ACI - Configure Port-Channel (SSH)",
