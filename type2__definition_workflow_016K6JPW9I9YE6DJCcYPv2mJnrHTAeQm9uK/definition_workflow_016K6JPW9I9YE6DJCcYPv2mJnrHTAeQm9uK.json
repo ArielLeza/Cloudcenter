@@ -1,0 +1,224 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016K6JPW9I9YE6DJCcYPv2mJnrHTAeQm9uK",
+    "name": "test-newdup",
+    "title": "test-newdup",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "test-newdup",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016K6JT3JR3HQ2JukMUeBHSTSLxZwq577BP",
+        "name": "Map EPGs to Interface -testifdup",
+        "title": "Map EPGs to Interface -testifdup",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Map EPGs to Interface -testifdup",
+          "input": {
+            "variable_workflow_016HAC94X1JAM4lgbqLpNTm9YvVnqG0PGC7": true
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "override_workflow_target": false,
+            "target_id": "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_016GXDSAHIAQ113sqKzHg3RFymCNqaiXMhd"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "categories": {
+    "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT": {
+      "unique_name": "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT",
+      "name": "ACI-Automation",
+      "title": "ACI-Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "testing for pmo24 ",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM": {
+      "unique_name": "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM",
+      "name": "ACI",
+      "title": "ACI",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "ACI",
+        "host": "10.2.0.14",
+        "no_runtime_user": true,
+        "path": "/api",
+        "port": 80,
+        "protocol": "http"
+      }
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_016GXDSAHIAQ113sqKzHg3RFymCNqaiXMhd",
+        "name": "Map EPGs to Interface ",
+        "title": "Map EPGs to Interface ",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "datatype.boolean",
+            "properties": {
+              "value": true,
+              "scope": "input",
+              "name": "Input new Int",
+              "type": "datatype.boolean",
+              "description": "this will determine if a new Int policy group is needed or not "
+            },
+            "unique_name": "variable_workflow_016HAC94X1JAM4lgbqLpNTm9YvVnqG0PGC7",
+            "object_type": "variable_workflow"
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "display_name": "Map EPGs to Interface ",
+          "favorite": false,
+          "target": {
+            "target_type": "web-service.endpoint",
+            "target_id": "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM",
+            "execute_on_workflow_target": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_016GXE1IBB7JB4ttVAZzgOeRclQksryMC5m",
+            "name": "Get Access Token",
+            "title": "Get Access Token",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get Access Token",
+              "input": {
+                "variable_workflow_01gRbBzC6y65ilW690WbXhKOxVVEFAWak": "ccc",
+                "variable_workflow_01gRbcbVNXvwNc0xy6oSxfLv1IMlF4e8W": "lhdSecret15hav4I0yw9MzGZz782tUe6QdCG_jjbMrlLfV876H1zQ5Hpu8A==_lhdSecret15hav4I0yw9MzGZz782tUe6QdCG"
+              },
+              "target": {
+                "execute_on_this_target": false,
+                "no_target": false,
+                "override_workflow_target": false,
+                "target_type": "016EDIFRYAM353t5PCuMJlnBaq2Eu2GnvJH",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_016GXE3GD7RFS0tUih1qYSCScyPADNfn0vm",
+            "name": "Get EPGs on Fabric",
+            "title": "Get EPGs on Fabric",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get EPGs on Fabric",
+              "input": {
+                "variable_workflow_01gsIwExqfmUaoggu6uOyvBvabqZA3ZLV": "$activity.definition_activity_016GXE1IBB7JB4ttVAZzgOeRclQksryMC5m.output.variable_workflow_01gsImXMWfa5RLNqia7EnKyhdI7KS9iNR$",
+                "variable_workflow_01gsdK0zbTS4PCnARX0O9igJm1kjJuPeO": "GET",
+                "variable_workflow_01gsdloLMNSSYplMekO1An6ixWk3Lxp6i": "null",
+                "variable_workflow_01gsdpOPuyoXxmcr2tUmx0nYehy4zQq7V": "/node/class/fvAEPg.json",
+                "variable_workflow_01gsdslJCwSZyhMcI4byCrpPtpAUomyce": "$activity.definition_activity_016GXE1IBB7JB4ttVAZzgOeRclQksryMC5m.output.variable_workflow_01gRCX1ylwvVGzqIKjoLIg04d3smgS7fS$"
+              },
+              "target": {
+                "execute_on_this_target": false,
+                "no_target": false,
+                "override_workflow_target": false,
+                "target_type": "016EDIFRYAM353t5PCuMJlnBaq2Eu2GnvJH",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_016H5KIUN00DO03UDZwWLfW8TvuIKX8wEvG",
+            "name": "Match Regular Expression",
+            "title": "Match Regex - Parse EPG",
+            "type": "core.matchregex",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Match Regex - Parse EPG",
+              "input_regex": "[^\"]*epg-[^\"]*",
+              "input_string": "$activity.definition_activity_016GXE3GD7RFS0tUih1qYSCScyPADNfn0vm.output.variable_workflow_01gsEqfeERFH1lYRlKhW81VRFgp6uC1Dp$"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_016H7YEF7LLZM5pc3FaKZeP7NWC4q7Bonby",
+            "name": "Generic API Request",
+            "title": "Generic API Request",
+            "type": "workflow.atomic_workflow",
+            "base_type": "subworkflow",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Generic API Request",
+              "input": {
+                "variable_workflow_01gsIwExqfmUaoggu6uOyvBvabqZA3ZLV": "$activity.definition_activity_016GXE1IBB7JB4ttVAZzgOeRclQksryMC5m.output.variable_workflow_01gsImXMWfa5RLNqia7EnKyhdI7KS9iNR$",
+                "variable_workflow_01gsdK0zbTS4PCnARX0O9igJm1kjJuPeO": "POST",
+                "variable_workflow_01gsdloLMNSSYplMekO1An6ixWk3Lxp6i": "null",
+                "variable_workflow_01gsdpOPuyoXxmcr2tUmx0nYehy4zQq7V": "/node/uni",
+                "variable_workflow_01gsdslJCwSZyhMcI4byCrpPtpAUomyce": "$activity.definition_activity_016GXE1IBB7JB4ttVAZzgOeRclQksryMC5m.output.variable_workflow_01gRCX1ylwvVGzqIKjoLIg04d3smgS7fS$"
+              },
+              "target": {
+                "execute_on_this_target": false,
+                "no_target": false,
+                "override_workflow_target": false,
+                "target_type": "016EDIFRYAM353t5PCuMJlnBaq2Eu2GnvJH",
+                "use_workflow_target": true
+              },
+              "workflow_id": "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT"
+        ]
+      }
+    }
+  ],
+  "atomic_workflows": [
+    "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN",
+    "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x",
+    "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+  ]
+}
