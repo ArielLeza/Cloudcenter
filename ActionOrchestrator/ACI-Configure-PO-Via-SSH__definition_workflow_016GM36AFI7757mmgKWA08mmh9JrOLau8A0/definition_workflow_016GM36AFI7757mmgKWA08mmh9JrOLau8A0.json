@@ -1,0 +1,153 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0",
+    "name": "ACI - Configure Port-Channel (SSH)",
+    "title": "ACI - Configure Port-Channel (SSH)",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "enter the Interface Policy Group Name ",
+          "scope": "input",
+          "name": "Interface Policy Group Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016GTW1UKD89G1MVz7xHjunSXSGJ5rrL2r7",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Enter exact name of physical domain name",
+          "scope": "input",
+          "name": "Phy_Domain (Vlan Pool)",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016GTX64VLJRD3548OdxnnafPTWgGGpOxFY",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "enter interface ID (example: 1/4)",
+          "scope": "input",
+          "name": "Interface-Number",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016GTZ8RP9JKN08D0fbkWCLtmmGo54dFYls",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "VLAN-ID",
+          "scope": "input",
+          "name": "VLAN-ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016GUJ7XRBGOK6XV5wkRH69Jxva5V2KfK6V",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Enter first Leaf in VPC domain (ID number)",
+          "scope": "input",
+          "name": "Leaf-ID-1",
+          "type": "datatype.string",
+          "description": "used to define the Leaf-ID for VPC config"
+        },
+        "unique_name": "variable_workflow_016GTPLFML1D41FxyZ5u9x8H6CY3MciRLzM",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "ACI - Configure Port-Channel (SSH)",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.endpoint",
+        "target_id": "definition_target_016GSQM044TLA3iYk87GEwR5p0cjk4VJCZ5",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016GM5ZOR2KUQ1woNkzpWT7hzK0Tf2vi8l4",
+        "name": "Execute Terminal Command(s)",
+        "title": "Execute Terminal Command(s)",
+        "type": "terminal.command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 30,
+          "command_timeout": 20,
+          "commands": "configure\ntemplate port-channel ACC_Int_Pol_Grp_$workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GTW1UKD89G1MVz7xHjunSXSGJ5rrL2r7$\nvlan-domain member ccc\nswitchport access vlan $workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GUJ7XRBGOK6XV5wkRH69Jxva5V2KfK6V$ tenant Ariel application Legacy epg Vlan-$workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GUJ7XRBGOK6XV5wkRH69Jxva5V2KfK6V$\nchannel-mode active\nexit\nleaf $workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GTPLFML1D41FxyZ5u9x8H6CY3MciRLzM$\ninterface ethernet $workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GTZ8RP9JKN08D0fbkWCLtmmGo54dFYls$\nchannel-group ACC_Int_Pol_Grp_$workflow.definition_workflow_016GM36AFI7757mmgKWA08mmh9JrOLau8A0.input.variable_workflow_016GTW1UKD89G1MVz7xHjunSXSGJ5rrL2r7$ \n exit\n",
+          "continue_on_failure": false,
+          "display_name": "Execute Terminal Command(s)",
+          "merge_commands": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "use_workflow_target": true
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT"
+    ]
+  },
+  "categories": {
+    "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT": {
+      "unique_name": "category_016FBE3ZUW3424y0tqHOIhTCXoSmIC4aXiT",
+      "name": "ACI-Automation",
+      "title": "ACI-Automation",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "testing for pmo24 ",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_016GSQM044TLA3iYk87GEwR5p0cjk4VJCZ5": {
+      "unique_name": "definition_target_016GSQM044TLA3iYk87GEwR5p0cjk4VJCZ5",
+      "name": "ACI-SSH",
+      "title": "ACI-SSH",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_016FBA0Z8NTIK0z0mALk2nRGPMlPo5XNvZx",
+        "display_name": "ACI-SSH",
+        "host": "10.2.0.14",
+        "port": 22,
+        "protocol": "ssh"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_016FBA0Z8NTIK0z0mALk2nRGPMlPo5XNvZx": {
+      "unique_name": "definition_runtime_user_016FBA0Z8NTIK0z0mALk2nRGPMlPo5XNvZx",
+      "name": "Lab-Admin-Default",
+      "title": "Lab-Admin-Default",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "description": "admin\nC1sco12345",
+        "display_name": "Lab-Admin-Default"
+      }
+    }
+  }
+}
