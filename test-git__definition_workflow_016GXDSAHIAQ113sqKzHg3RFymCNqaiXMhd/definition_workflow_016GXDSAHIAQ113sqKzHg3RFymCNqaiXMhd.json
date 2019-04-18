@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_016GXDSAHIAQ113sqKzHg3RFymCNqaiXMhd",
-    "name": "Map EPGs to Interface - real?",
-    "title": "Map EPGs to Interface - real?",
+    "name": "Map EPGs to Interface ",
+    "title": "Map EPGs to Interface ",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -24,7 +24,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Map EPGs to Interface - real?",
+      "display_name": "Map EPGs to Interface ",
       "favorite": false,
       "target": {
         "target_type": "web-service.endpoint",
