@@ -41,7 +41,7 @@
         "properties": {
           "action_timeout": 180,
           "command_timeout": 60,
-          "commands": "conf t\n$workflow.definition_workflow_016KEUEUX1X272AjG8QXB0vTicbDdOcxlhD.input.variable_workflow_016KFAL00T4QJ3v7MRXqRuh5X67yR6umhBO$",
+          "commands": "$workflow.definition_workflow_016KEUEUX1X272AjG8QXB0vTicbDdOcxlhD.input.variable_workflow_016KFAL00T4QJ3v7MRXqRuh5X67yR6umhBO$",
           "continue_on_failure": false,
           "display_name": "Connect to switch",
           "merge_commands": false,
