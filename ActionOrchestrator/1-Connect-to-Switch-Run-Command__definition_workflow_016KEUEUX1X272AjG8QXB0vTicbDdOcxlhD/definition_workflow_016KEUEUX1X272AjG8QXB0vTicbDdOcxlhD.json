@@ -5,7 +5,19 @@
     "title": "Connect to Switch",
     "type": "generic.workflow",
     "base_type": "workflow",
-    "variables": null,
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Command to run",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_016KFAL00T4QJ3v7MRXqRuh5X67yR6umhBO",
+        "object_type": "variable_workflow"
+      }
+    ],
     "properties": {
       "atomic": {
         "is_atomic": false
