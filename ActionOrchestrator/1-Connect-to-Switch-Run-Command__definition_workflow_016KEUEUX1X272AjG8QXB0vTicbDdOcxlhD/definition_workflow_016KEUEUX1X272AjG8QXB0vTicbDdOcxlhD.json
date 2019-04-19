@@ -1,0 +1,77 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016KEUEUX1X272AjG8QXB0vTicbDdOcxlhD",
+    "name": "Connect to Switch",
+    "title": "Connect to Switch",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Connect to Switch",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016KEZCEHLIBV6cfimPLTKU5KTyrc1PKS2E",
+        "name": "Execute Terminal Command(s)",
+        "title": "Connect to switch",
+        "type": "terminal.command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command_timeout": 60,
+          "commands": "conf t\n$env.variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs.env.variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs$",
+          "continue_on_failure": false,
+          "display_name": "Connect to switch",
+          "merge_commands": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K"
+    ]
+  },
+  "categories": {
+    "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K": {
+      "unique_name": "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K",
+      "name": "ACI-Demo",
+      "title": "ACI-Demo",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs": {
+      "unique_name": "variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs",
+      "properties": {
+        "value": "insert",
+        "scope": "env",
+        "name": "Command to run ",
+        "type": "datatype.string"
+      },
+      "object_type": "variable"
+    }
+  }
+}
