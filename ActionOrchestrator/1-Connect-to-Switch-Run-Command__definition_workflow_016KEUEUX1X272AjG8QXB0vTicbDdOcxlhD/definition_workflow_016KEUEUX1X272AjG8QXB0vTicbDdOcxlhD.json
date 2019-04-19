@@ -41,7 +41,7 @@
         "properties": {
           "action_timeout": 180,
           "command_timeout": 60,
-          "commands": "conf t\n$env.variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs.env.variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs$",
+          "commands": "conf t\n$workflow.definition_workflow_016KEUEUX1X272AjG8QXB0vTicbDdOcxlhD.input.variable_workflow_016KFAL00T4QJ3v7MRXqRuh5X67yR6umhBO$",
           "continue_on_failure": false,
           "display_name": "Connect to switch",
           "merge_commands": false,
@@ -72,18 +72,6 @@
       "base_type": "category",
       "category_type": "custom",
       "object_type": "category"
-    }
-  },
-  "variables": {
-    "variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs": {
-      "unique_name": "variable_016KF5CMSQP7H2Foag4LIiKe55JT4lkIMQs",
-      "properties": {
-        "value": "insert",
-        "scope": "env",
-        "name": "Command to run ",
-        "type": "datatype.string"
-      },
-      "object_type": "variable"
     }
   }
 }
