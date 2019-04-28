@@ -1,0 +1,108 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy",
+    "name": "List IP of all Endpoints under ACI App",
+    "title": "List IP of all Endpoints under ACI App",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "List IP of all Endpoints under ACI App",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016STOFETTYP01EIhDj7QWUBK7TUHl2ECRJ",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {
+            "variable_workflow_01gRbBzC6y65ilW690WbXhKOxVVEFAWak": "admin",
+            "variable_workflow_01gRbcbVNXvwNc0xy6oSxfLv1IMlF4e8W": "lhdSecret15hav4I0yw9MzGZz782tUe6QdCG_jjbMrlLfV876H1zQ5Hpu8A==_lhdSecret15hav4I0yw9MzGZz782tUe6QdCG"
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "016EDIFRYAM353t5PCuMJlnBaq2Eu2GnvJH",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016STOGHFH3OK6CT1AEiG3Yazmg77kdaOXT",
+        "name": "Get End Point Groups",
+        "title": "Get End Point Groups",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get End Point Groups",
+          "input": {
+            "variable_workflow_01gsFxaQL5QBhukITzdRiJ8AlVGMLdDLX": "$activity.definition_activity_016STOFETTYP01EIhDj7QWUBK7TUHl2ECRJ.output.variable_workflow_01gRCX1ylwvVGzqIKjoLIg04d3smgS7fS$",
+            "variable_workflow_01gsJbGhdasusfAvGGb5IUwVqQ4Xb5BFB": "$activity.definition_activity_016STOFETTYP01EIhDj7QWUBK7TUHl2ECRJ.output.variable_workflow_01gsImXMWfa5RLNqia7EnKyhdI7KS9iNR$",
+            "variable_workflow_01gsmDI6XjfG4QhZ7Twqy3TBaFwNXDP8p": "null"
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "016EDIFRYAM353t5PCuMJlnBaq2Eu2GnvJH",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gseBDpE7ygqPidWE7BVseSHctwCwCGk"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "categories": {
+    "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K": {
+      "unique_name": "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K",
+      "name": "ACI-Demo",
+      "title": "ACI-Demo",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM": {
+      "unique_name": "definition_target_016EE18I5SUG43h4zVn6byE3wwxgEdU4kiM",
+      "name": "ACI",
+      "title": "ACI",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "ACI",
+        "host": "10.2.0.14",
+        "no_runtime_user": true,
+        "path": "/api",
+        "port": 80,
+        "protocol": "http"
+      }
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN",
+    "definition_workflow_01gseBDpE7ygqPidWE7BVseSHctwCwCGk"
+  ]
+}
