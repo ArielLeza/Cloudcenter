@@ -21,7 +21,7 @@
         "schema_id": "datatype.string",
         "properties": {
           "value": "",
-          "scope": "input",
+          "scope": "local",
           "name": "Listed EPGs",
           "type": "datatype.string"
         },
@@ -102,7 +102,7 @@
           "display_name": "Set Variables",
           "variables_to_update": [
             {
-              "variable_to_update": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.input.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
+              "variable_to_update": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.local.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
               "variable_value_new": "$activity.definition_activity_016STOGHFH3OK6CT1AEiG3Yazmg77kdaOXT.output.variable_workflow_01gsLJB1SJtLIYmpWtKwtkyYEAPSXB89g[0].DN$"
             }
           ]
@@ -117,7 +117,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "body": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.input.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
+          "body": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.local.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
           "continue_on_failure": false,
           "display_name": "Send Email",
           "runtime_user": {
