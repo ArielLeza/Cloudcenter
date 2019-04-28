@@ -117,7 +117,7 @@
         "base_type": "activity",
         "properties": {
           "action_timeout": 180,
-          "body": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.local.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
+          "body": "$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.local.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$$workflow.definition_workflow_016STO6BPR50R4P32qLeFVVpHox1M5lquvy.local.variable_workflow_016STXBB2LOEY4v7MHgjrEtJlJgr5hO2eHt$",
           "continue_on_failure": false,
           "display_name": "Send Email",
           "runtime_user": {
