@@ -1,0 +1,102 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016W4LBT9RP803pX6m8TtZ5OdcnOL9zQ20h",
+    "name": "CloudCenter Suite Admin Logs",
+    "title": "CloudCenter Suite Admin Logs",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "task to collect all logs of a specific deployment in CCC",
+      "display_name": "CloudCenter Suite Admin Logs",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.unix_linux_endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016W5X3ZEOF5E7luZEXWcEKoN3En3rpu0mK",
+        "name": "Gain root access",
+        "title": "Gain root access",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Gain root access",
+          "input": {},
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "override_workflow_target": false,
+            "target_type": "016V8OMICYKD96I5jAgM8vy0zw38Cw0D1k8",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_016W5GO10PHKF0DUvpRD4FQj252lKMOJ1tT"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_016W5X8TZFFH91kQITobHTjtaLCBx7NTdpM",
+        "name": "Execute Linux/Unix SSH Script",
+        "title": "Curl File to API Location",
+        "type": "terminal.ssh_script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Curl File to API Location",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "script": "curl -H \"Authorization: token $env.variable_016W688YBOZJH6fuBp2baUK6Ap26vvAc7hK.env.variable_016W688YBOZJH6fuBp2baUK6Ap26vvAc7hK$\" -H \"Content-Type: Content-Type $FILE)\" --data-binary @$FILE \"https://uploads.github.com/repos/hubot/singularity/releases/123/assets?name=$(basename $FILE)\"",
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_016W4L31DQ54O5uoHsymI4GemB0XPb6FZPa"
+    ]
+  },
+  "categories": {
+    "category_016W4L31DQ54O5uoHsymI4GemB0XPb6FZPa": {
+      "unique_name": "category_016W4L31DQ54O5uoHsymI4GemB0XPb6FZPa",
+      "name": "DevOps-Containers",
+      "title": "DevOps-Containers",
+      "type": "basic.category",
+      "base_type": "category",
+      "description": "example operational use-cases for devops and k8",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "variables": {
+    "variable_016W688YBOZJH6fuBp2baUK6Ap26vvAc7hK": {
+      "unique_name": "variable_016W688YBOZJH6fuBp2baUK6Ap26vvAc7hK",
+      "properties": {
+        "value": "GitOAuth",
+        "scope": "env",
+        "name": "Git Personal Token",
+        "type": "datatype.string",
+        "description": "this is an OAuth token to be used to use Git API "
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_016W5GO10PHKF0DUvpRD4FQj252lKMOJ1tT"
+  ]
+}
