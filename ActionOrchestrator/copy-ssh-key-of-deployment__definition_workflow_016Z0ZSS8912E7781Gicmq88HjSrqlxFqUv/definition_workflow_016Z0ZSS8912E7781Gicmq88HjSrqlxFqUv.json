@@ -1,0 +1,45 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_016Z0ZSS8912E7781Gicmq88HjSrqlxFqUv",
+    "name": "Get SSH key",
+    "title": "Get SSH key",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": "etCCSKey - This python code will get the SSH key from A CloudCenter Instance\n\nIP Address - Change IP Address to the IP of your CloudCenter Instance\n\nauth - Change the auth to the Basic token created by combining the user number and key generated when you right click the Suite admin on the top right and click, \"Generate API key'",
+      "display_name": "Get SSH key",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_016Z0ZXT1I1UN1l2JZ7BP2mIYus4qRquLgp",
+        "name": "Execute Python Script",
+        "title": "Execute Python Script",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Execute Python Script",
+          "script": "import requests\nimport json\nimport urllib3\nurllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)\n\n#Change Me\nhost = \"[IP Address]\"\nauth = \"Basic [Authorization key]\"\n\n# Code\nurl = \"https://\" + host + \":24573/cloudcenter-ccm-backend/api/v1/user/keys\"\n\nheaders = {\n    'Accept': \"application/json\",\n    'Authorization': auth,\n    'User-Agent': \"Python\",\n    'Cache-Control': \"no-cache\",\n    'accept-encoding': \"gzip, deflate\",\n    'Connection': \"keep-alive\",\n    'cache-control': \"no-cache\"\n    }\n\nresponse = requests.request(\"GET\", url, headers=headers, verify=False)\n\nprint(json.loads(response.text)['sshKeys'][0]['key'])"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
