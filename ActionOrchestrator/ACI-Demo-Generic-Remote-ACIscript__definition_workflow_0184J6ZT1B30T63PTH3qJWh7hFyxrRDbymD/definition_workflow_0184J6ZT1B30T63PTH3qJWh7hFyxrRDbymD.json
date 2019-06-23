@@ -1,0 +1,167 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0184J6ZT1B30T63PTH3qJWh7hFyxrRDbymD",
+    "name": "Generic Remote ACI SDK script ",
+    "title": "Generic Remote ACI SDK script ",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "admin",
+          "scope": "input",
+          "name": "APIC username",
+          "type": "datatype.string",
+          "description": "Example: 'Ádmin'"
+        },
+        "unique_name": "variable_workflow_0184K1760MQ84140D6pB4T51bTcJADbzOm4",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "192.168.31.11",
+          "scope": "input",
+          "name": "APIC IP Address",
+          "type": "datatype.string",
+          "description": "example: '192.168.31.11'"
+        },
+        "unique_name": "variable_workflow_0184JE3ZSIZOD6WEfErM6l4PZW1FprA5Jz9",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "*****",
+          "scope": "input",
+          "name": "APIC User Password",
+          "type": "datatype.secure_string",
+          "description": "example: 'C1sco12345'"
+        },
+        "unique_name": "variable_workflow_0184JF1NHBZ0X2KCJTg70Rfh94K09GVZtbf",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "aci/",
+          "scope": "local",
+          "name": "script directory (relative path)",
+          "type": "datatype.string",
+          "description": "example: 'root/home/scripts/aci/'"
+        },
+        "unique_name": "variable_workflow_0184JT2EIDQQ51Hijjni8O8b75QWpTCjPAc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "tenantExample.py",
+          "scope": "input",
+          "name": "Script Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0184JVHZ686T51233QQ6gV6HhFf1gRdT3GZ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Generic Remote ACI SDK script ",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.unix_linux_endpoint",
+        "target_id": "definition_target_0184J1558NJH30h0vxqCtCxnBHYTgU8W11f",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0184J70EU16X66bajvZeyARih3wHHg3hfp5",
+        "name": "Execute Linux/Unix SSH Command",
+        "title": "Execute Linux/Unix SSH Command",
+        "type": "terminal.ssh_command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command": "python aci/tenantExample.py -d $workflow.definition_workflow_0184J6ZT1B30T63PTH3qJWh7hFyxrRDbymD.input.variable_workflow_0184JE3ZSIZOD6WEfErM6l4PZW1FprA5Jz9$ -e 443 -u $workflow.definition_workflow_0184J6ZT1B30T63PTH3qJWh7hFyxrRDbymD.input.variable_workflow_0184K1760MQ84140D6pB4T51bTcJADbzOm4$  -p  $workflow.definition_workflow_0184J6ZT1B30T63PTH3qJWh7hFyxrRDbymD.input.variable_workflow_0184JF1NHBZ0X2KCJTg70Rfh94K09GVZtbf$",
+          "command_timeout": 60,
+          "continue_on_failure": false,
+          "display_name": "Execute Linux/Unix SSH Command",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01835S8G3OOA74Ar5kguSPX4meYuoaeFRbX",
+      "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K"
+    ]
+  },
+  "categories": {
+    "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K": {
+      "unique_name": "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K",
+      "name": "ACI-Demo",
+      "title": "ACI-Demo",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    },
+    "category_01835S8G3OOA74Ar5kguSPX4meYuoaeFRbX": {
+      "unique_name": "category_01835S8G3OOA74Ar5kguSPX4meYuoaeFRbX",
+      "name": "aci",
+      "title": "aci",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_0184J1558NJH30h0vxqCtCxnBHYTgU8W11f": {
+      "unique_name": "definition_target_0184J1558NJH30h0vxqCtCxnBHYTgU8W11f",
+      "name": "ACI-SDK",
+      "title": "ACI-SDK",
+      "type": "terminal.unix_linux_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "bash_shell": "/bin/bash",
+        "default_runtime_user_id": "definition_runtime_user_0184J01MSFEC96v0InjykPU4XFoVD4j3moN",
+        "display_name": "ACI-SDK",
+        "host": "192.168.29.8",
+        "port": 22
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_0184J01MSFEC96v0InjykPU4XFoVD4j3moN": {
+      "unique_name": "definition_runtime_user_0184J01MSFEC96v0InjykPU4XFoVD4j3moN",
+      "name": "ACI-SDK (Root user)",
+      "title": "ACI-SDK (Root user)",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "ACI-SDK (Root user)",
+        "password": "*****",
+        "user": "*****"
+      }
+    }
+  }
+}
