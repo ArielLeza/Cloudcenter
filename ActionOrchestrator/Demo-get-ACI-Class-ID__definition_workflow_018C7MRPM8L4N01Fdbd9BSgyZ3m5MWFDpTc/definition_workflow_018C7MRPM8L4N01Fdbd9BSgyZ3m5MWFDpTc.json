@@ -1,0 +1,127 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018C7MRPM8L4N01Fdbd9BSgyZ3m5MWFDpTc",
+    "name": "get ACIClass object - REST API",
+    "title": "get ACIClass object - REST API",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "get ACIClass object - REST API",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01835VHRS5BDN32mI7jMWPqVpuOmHkNjwm9",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018C7N20N6NV85qP7fxbqmWg75DOiOGJ7t7",
+        "name": "Get Access Token",
+        "title": "Get Access Token",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Get Access Token",
+          "input": {
+            "variable_workflow_01gRbBzC6y65ilW690WbXhKOxVVEFAWak": "admin",
+            "variable_workflow_01gRbcbVNXvwNc0xy6oSxfLv1IMlF4e8W": "$global.variable_018C6YV15LSB16VJSoi47UW9tObbIdDOzAf.global.variable_018C6YV15LSB16VJSoi47UW9tObbIdDOzAf$"
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "0182PWW5RM5JH1fZkhGUMaH6lBtYFyZ7Aln",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018C7N7N9KIKA65fWIuGYxvSAcypsOgymuL",
+        "name": "Generic API Request",
+        "title": "Generic API Request",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Generic API Request",
+          "input": {
+            "variable_workflow_01gsIwExqfmUaoggu6uOyvBvabqZA3ZLV": "$activity.definition_activity_018C7N20N6NV85qP7fxbqmWg75DOiOGJ7t7.output.variable_workflow_01gsImXMWfa5RLNqia7EnKyhdI7KS9iNR$",
+            "variable_workflow_01gsdK0zbTS4PCnARX0O9igJm1kjJuPeO": "GET",
+            "variable_workflow_01gsdloLMNSSYplMekO1An6ixWk3Lxp6i": "null",
+            "variable_workflow_01gsdpOPuyoXxmcr2tUmx0nYehy4zQq7V": "/class/infraAccBndlGrp.json",
+            "variable_workflow_01gsdslJCwSZyhMcI4byCrpPtpAUomyce": "$activity.definition_activity_018C7N20N6NV85qP7fxbqmWg75DOiOGJ7t7.output.variable_workflow_01gRCX1ylwvVGzqIKjoLIg04d3smgS7fS$"
+          },
+          "target": {
+            "override_workflow_target": false,
+            "target_type": "0182PWW5RM5JH1fZkhGUMaH6lBtYFyZ7Aln",
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01835VHRS5BDN32mI7jMWPqVpuOmHkNjwm9": {
+      "unique_name": "definition_target_01835VHRS5BDN32mI7jMWPqVpuOmHkNjwm9",
+      "name": "ACI Site-1",
+      "title": "ACI Site-1",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01835V9VX36FX2AfEEBP9JXjBrECRkpsH86",
+        "disable_certificate_validation": true,
+        "display_name": "ACI Site-1",
+        "host": "192.168.31.11",
+        "no_runtime_user": false,
+        "path": "/api",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01835V9VX36FX2AfEEBP9JXjBrECRkpsH86": {
+      "unique_name": "definition_runtime_user_01835V9VX36FX2AfEEBP9JXjBrECRkpsH86",
+      "name": "CCS-Admin",
+      "title": "CCS-Admin",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "CCS-Admin"
+      }
+    }
+  },
+  "variables": {
+    "variable_018C6YV15LSB16VJSoi47UW9tObbIdDOzAf": {
+      "unique_name": "variable_018C6YV15LSB16VJSoi47UW9tObbIdDOzAf",
+      "properties": {
+        "value": "*****",
+        "scope": "global",
+        "name": "ACI Admin PW - REST API",
+        "type": "datatype.secure_string"
+      },
+      "object_type": "variable"
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_01gRBIJ4lT0J8qCi0CcrG0bvgGO8oehuN",
+    "definition_workflow_01gsDxN1Ug87C3EBEzmcxxiZoJPWfCB5x"
+  ]
+}
