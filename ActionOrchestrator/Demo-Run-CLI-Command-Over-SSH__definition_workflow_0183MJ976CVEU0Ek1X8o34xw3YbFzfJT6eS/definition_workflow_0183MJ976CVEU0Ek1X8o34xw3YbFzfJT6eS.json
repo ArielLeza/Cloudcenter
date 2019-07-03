@@ -1,0 +1,111 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS",
+    "name": "Connect to Switch",
+    "title": "Connect to Switch",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "show run",
+          "scope": "input",
+          "name": "Command to run",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0183MJ9MAH07X26gle2ttdgCmVPmm6DFO4O",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Connect to Switch",
+      "favorite": false,
+      "target": {
+        "target_type": "terminal.endpoint",
+        "target_id": "definition_target_018CWQJ7KS1RK3cRXiCKrFbHxPEbEOrZyBa",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0185H0V19LP612NFc8B38PYYGYojsaLfuRj",
+        "name": "Execute Terminal Command(s)",
+        "title": "Execute Terminal Command(s)",
+        "type": "terminal.command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 10,
+          "command_timeout": 10,
+          "commands": "$workflow.definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS.input.variable_workflow_0183MJ9MAH07X26gle2ttdgCmVPmm6DFO4O$ | no-more",
+          "continue_on_failure": true,
+          "display_name": "Execute Terminal Command(s)",
+          "merge_commands": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K"
+    ]
+  },
+  "categories": {
+    "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K": {
+      "unique_name": "category_016KESD4V1IRQ4n2yU1ucKGR9HTauJ5yE4K",
+      "name": "ACI-Demo",
+      "title": "ACI-Demo",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_018CWQJ7KS1RK3cRXiCKrFbHxPEbEOrZyBa": {
+      "unique_name": "definition_target_018CWQJ7KS1RK3cRXiCKrFbHxPEbEOrZyBa",
+      "name": "Terminal target - LAB-CORE-N9K-B",
+      "title": "Terminal target - LAB-CORE-N9K-B",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_018CZ8E2LJE7X1v9GiKPLfjDwB47IXuX5tK",
+        "display_name": "Terminal target - LAB-CORE-N9K-B",
+        "host": "192.168.30.252",
+        "port": 22,
+        "protocol": "ssh"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_018CZ8E2LJE7X1v9GiKPLfjDwB47IXuX5tK": {
+      "unique_name": "definition_runtime_user_018CZ8E2LJE7X1v9GiKPLfjDwB47IXuX5tK",
+      "name": "Lab Admin PW ",
+      "title": "Lab Admin PW ",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "admin_password": "*****",
+        "display_name": "Lab Admin PW ",
+        "password": "*****",
+        "user": "*****"
+      }
+    }
+  }
+}
