@@ -1,20 +1,31 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS",
-    "name": "Connect to Switch",
-    "title": "Connect to Switch",
+    "name": "SSH to Switch and run command",
+    "title": "SSH to Switch and run command",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "tabletype_018D0PPKAQKQ36K57ifqbGfbIfRR0y6Jxod",
+        "properties": {
+          "scope": "local",
+          "name": "test",
+          "type": "datatype.table"
+        },
+        "unique_name": "variable_workflow_018D0SI1KRA0J4eOtVniiLO7pMDP7yIF59s",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "datatype.string",
         "properties": {
-          "value": "show run",
+          "value": "run me!",
           "scope": "input",
-          "name": "Command to run",
-          "type": "datatype.string"
+          "name": "itay run this command",
+          "type": "datatype.string",
+          "description": "test "
         },
-        "unique_name": "variable_workflow_0183MJ9MAH07X26gle2ttdgCmVPmm6DFO4O",
+        "unique_name": "variable_workflow_018DJVHVSFAAS1e1gXNDhMTKBwc25OPwGPD",
         "object_type": "variable_workflow"
       }
     ],
@@ -23,7 +34,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Connect to Switch",
+      "display_name": "SSH to Switch and run command",
       "favorite": false,
       "target": {
         "target_type": "terminal.endpoint",
@@ -42,7 +53,7 @@
         "properties": {
           "action_timeout": 10,
           "command_timeout": 10,
-          "commands": "$workflow.definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS.input.variable_workflow_0183MJ9MAH07X26gle2ttdgCmVPmm6DFO4O$ | no-more",
+          "commands": "$workflow.definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS.input.variable_workflow_018DJVHVSFAAS1e1gXNDhMTKBwc25OPwGPD$ | no-more",
           "continue_on_failure": true,
           "display_name": "Execute Terminal Command(s)",
           "merge_commands": false,
@@ -52,9 +63,7 @@
           },
           "target": {
             "override_workflow_target": false,
-            "override_workflow_target_group_criteria": false,
-            "use_workflow_target": true,
-            "use_workflow_target_group": false
+            "use_workflow_target": true
           }
         },
         "object_type": "definition_activity"
@@ -106,6 +115,31 @@
         "password": "*****",
         "user": "*****"
       }
+    }
+  },
+  "table_types": {
+    "tabletype_018D0PPKAQKQ36K57ifqbGfbIfRR0y6Jxod": {
+      "unique_name": "tabletype_018D0PPKAQKQ36K57ifqbGfbIfRR0y6Jxod",
+      "data_type": "datatype.tabletype",
+      "display_name": "Interfaces and Descriptions",
+      "max_rows": 256,
+      "max_columns": 256,
+      "max_column_size": 1024,
+      "max_table_size": 26000,
+      "columns": [
+        {
+          "name": "interfaceID",
+          "title": "InterfaceID",
+          "type": "string"
+        },
+        {
+          "name": "Description",
+          "title": "Description",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
     }
   }
 }
