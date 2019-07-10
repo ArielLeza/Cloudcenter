@@ -1,0 +1,69 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018DFOP2RKUZB72UoD33BVaF8LK32HvoDuo",
+    "name": "Create Table from JSON output",
+    "title": "Create Table from JSON output",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Create Table from JSON output",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018DFOXQVZBM56Ha3FLjXUpoipjeLH1Bjwu",
+        "name": "Read Table from JSON",
+        "title": "Read Table from JSON",
+        "type": "corejava.read_table_from_json",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Read Table from JSON",
+          "input_json": "{\n  \"TABLE_interface\": {\n    \"ROW_interface\": [\n      {\n        \"interface\": \"mgmt0\"\n      },\n      {\n        \"interface\": \"Ethernet1/1\",\n        \"type\": \"eth\",\n        \"speed\": \"1000\"\n      },\n      {\n        \"interface\": \"Ethernet1/2\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/3\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/4\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/5\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/6\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/7\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/8\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/9\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/10\",\n        \"type\": \"eth\",\n        \"speed\": \"1000\",\n        \"desc\": \"Towards Lab-Core-N3K\"\n      },\n      {\n        \"interface\": \"Ethernet1/11\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/12\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/13\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/14\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/15\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/16\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/17\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/18\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/19\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/20\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/21\",\n        \"type\": \"eth\",\n        \"speed\": \"1000\"\n      },\n      {\n        \"interface\": \"Ethernet1/22\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/23\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/24\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/25\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/26\",\n        \"type\": \"eth\",\n        \"speed\": \"25G\",\n        \"desc\": \"To  N3240-A-L3Out\"\n      },\n      {\n        \"interface\": \"Ethernet1/27\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/28\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/29\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/30\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/31\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/32\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/33\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/34\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/35\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/36\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/37\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/38\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/39\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/40\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/41\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/42\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/43\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/44\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/45\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/46\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/47\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/48\",\n        \"type\": \"eth\",\n        \"speed\": \"10G\"\n      },\n      {\n        \"interface\": \"Ethernet1/49\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"Ethernet1/50\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"Ethernet1/51\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"Ethernet1/52\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"Ethernet1/53\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"Ethernet1/54\",\n        \"type\": \"eth\",\n        \"speed\": \"40G\"\n      },\n      {\n        \"interface\": \"port-channel1\"\n      },\n      {\n        \"interface\": \"port-channel2\"\n      },\n      {\n        \"interface\": \"port-channel3\"\n      },\n      {\n        \"interface\": \"port-channel8\"\n      },\n      {\n        \"interface\": \"port-channel10\"\n      },\n      {\n        \"interface\": \"Vlan1\"\n      },\n      {\n        \"interface\": \"Vlan13\"\n      },\n      {\n        \"interface\": \"Vlan24\"\n      },\n      {\n        \"interface\": \"Vlan26\"\n      },\n      {\n        \"interface\": \"Vlan28\"\n      },\n      {\n        \"interface\": \"Vlan30\"\n      },\n      {\n        \"interface\": \"Vlan121\"\n      },\n      {\n        \"interface\": \"Vlan204\"\n      }\n    ]\n  }\n}",
+          "jsonpath_query": "$.TABLE_interface.ROW_interface[*]",
+          "persist_output": false,
+          "populate_columns": false,
+          "table_columns": [
+            {
+              "column_name": "interface",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "type",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "speed",
+              "column_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "column_name": "desc",
+              "column_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
