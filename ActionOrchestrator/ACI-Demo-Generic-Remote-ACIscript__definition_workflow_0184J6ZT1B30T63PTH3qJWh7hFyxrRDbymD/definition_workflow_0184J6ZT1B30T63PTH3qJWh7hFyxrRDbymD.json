@@ -9,6 +9,17 @@
       {
         "schema_id": "datatype.string",
         "properties": {
+          "value": "tenantExample.py",
+          "scope": "input",
+          "name": "Script Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_0184JVHZ686T51233QQ6gV6HhFf1gRdT3GZ",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
           "value": "admin",
           "scope": "input",
           "name": "APIC username",
@@ -52,17 +63,6 @@
           "description": "example: 'root/home/scripts/aci/'"
         },
         "unique_name": "variable_workflow_0184JT2EIDQQ51Hijjni8O8b75QWpTCjPAc",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "datatype.string",
-        "properties": {
-          "value": "tenantExample.py",
-          "scope": "input",
-          "name": "Script Name",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_0184JVHZ686T51233QQ6gV6HhFf1gRdT3GZ",
         "object_type": "variable_workflow"
       }
     ],
