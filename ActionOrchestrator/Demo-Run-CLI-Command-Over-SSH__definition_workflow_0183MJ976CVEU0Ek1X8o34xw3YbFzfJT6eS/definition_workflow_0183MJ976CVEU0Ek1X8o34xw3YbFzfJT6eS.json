@@ -67,6 +67,20 @@
           }
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_018DK1R3ZCJOS3WrXVX9dVb1HCq86B04WWq",
+        "name": "Match Regular Expression",
+        "title": "Match Regular Expression",
+        "type": "core.matchregex",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Match Regular Expression",
+          "input_regex": "//g",
+          "input_string": "$workflow.definition_workflow_0183MJ976CVEU0Ek1X8o34xw3YbFzfJT6eS.input.variable_workflow_018DJVHVSFAAS1e1gXNDhMTKBwc25OPwGPD$"
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
