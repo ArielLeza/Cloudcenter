@@ -1,0 +1,115 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018UI1BHEJ8ZQ4DAoMa6tisR5C5dXvQYAQx",
+    "name": "Get Available IP addresses",
+    "title": "Get Available IP addresses",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "eaa327a82f26ec222f392f7e2e004100",
+          "scope": "local",
+          "name": "PHP--IPAM_API-Key_Notion",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_018UI32FOKZ6G3RCFKl2mv0Uxsvre67ymq1",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "192.168.30.10",
+          "scope": "input",
+          "name": "Subnet ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_018UI77JMKJGH6rP7BOj0HWtczaQmgSev5U",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Get Available IP addresses",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_018UI0WUS20KO6Cyv3Xv69i20JDG8sE8tLs",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018UI3JBCXK6A6eJx71eMbN5Pl9Qbe4XRyc",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "HTTP Request",
+          "method": "GET",
+          "relative_url": "/addresses/$workflow.definition_workflow_018UI1BHEJ8ZQ4DAoMa6tisR5C5dXvQYAQx.input.variable_workflow_018UI77JMKJGH6rP7BOj0HWtczaQmgSev5U$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_018UI0WUS20KO6Cyv3Xv69i20JDG8sE8tLs": {
+      "unique_name": "definition_target_018UI0WUS20KO6Cyv3Xv69i20JDG8sE8tLs",
+      "name": "http_PHP_IPAM-ISES_Lab",
+      "title": "http_PHP_IPAM-ISES_Lab",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_018UHZQLALEUP3PtkO64vEIJNTp39MsUdyJ",
+        "disable_certificate_validation": true,
+        "display_name": "http_PHP_IPAM-ISES_Lab",
+        "host": "192.168.31.200",
+        "no_runtime_user": false,
+        "path": "/api/notion",
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_018UHZQLALEUP3PtkO64vEIJNTp39MsUdyJ": {
+      "unique_name": "definition_runtime_user_018UHZQLALEUP3PtkO64vEIJNTp39MsUdyJ",
+      "name": "Cred_PHP_IPAM-Admin",
+      "title": "Cred_PHP_IPAM-Admin",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "basic_password": "*****",
+        "basic_username": "*****",
+        "display_name": "Cred_PHP_IPAM-Admin"
+      }
+    }
+  }
+}
